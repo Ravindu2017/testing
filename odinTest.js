@@ -29,15 +29,38 @@ let calculate = {
 }
 
 function caesarCipher(name, offset){
+    let simpleName = "";
     let cipher = "";
-    let capitals = [];
+    let absOffset = Math.abs(offset);
+    // let capitals = [];
+    // 65 - 122 is the range from "A" to "z"
+    // We only care for 65 - 90 "A" to "Z"
     for (let i = 0; i < name.length; i++) {
-        if (name[i] === name[i].toUpperCase()) {
-            console.log("capital Word", name[i]);
-            capitals.push(i);
+        simpleName[i] = name[i].toLowerCase();
+        // if (name[i] === name[i].toUpperCase()) {
+        //     console.log("capital Word", name[i]);
+        //     capitals.push(i);
+        // }
+    }
+
+    // for (let i = 0; i < cipher.length; i++) {
+    //     if (cipher.charCodeAt[i] + offset > 90) {
+    //         offset = offset % 25;
+    //     } else if (cipher.charCodeAt[i] + offset < 65) {
+    //         offset = absOffset % 25;
+    //     }
+    // }
+
+    for (let i = 0; i < simpleName.length; i++) {
+        if (simpleName.charCodeAt[i] + offset > 90) {
+            offset = offset % 25;
+        } else if (simpleName.charCodeAt[i] + offset < 65) {
+            offset = absOffset % 25;
         }
     }
 
+
+    console.log(name[4], name.charCodeAt(4), name[5], name.charCodeAt(5));
     let exec = "brett";
     let simp = "";
 
@@ -59,7 +82,7 @@ function caesarCipher(name, offset){
 
 let testName = "bart";
 
-let str = "RaVen"
+let str = "RaVeAZ"
 
 console.log(capitalize(testName), reverseString(str), calculate.add(5, 4), caesarCipher(str));
 
