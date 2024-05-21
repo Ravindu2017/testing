@@ -1,0 +1,13 @@
+ 110 % 90 = 20
+
+
+86 + 6 = 92
+
+   a position      offset
+if (65      +       65)    =   160 then 160  % 26 = 4 + 65 is the new letter
+
+
+maybe offset % 26 then add 65
+
+    a poisiton     offset
+if (65      +   (-100))    =   35  then 35   % 26 = 9 - 90 is the new letter  
