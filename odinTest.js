@@ -72,6 +72,4 @@ function makeOffset(name, offset) {
 
 
 console.log(makeOffset(str, 100));
-makeOffset(str, -149);
-
 // console.log(String.fromCharCode(78), str.charCodeAt(4));
