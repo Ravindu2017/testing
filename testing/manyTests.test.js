@@ -1,4 +1,4 @@
-const { reverseString, calculate, makeOffset } = require('../odinTest');
+const { reverseString, calculate, makeOffset, analysis } = require('../odinTest');
 
 test("Reverser", () => {
     expect(reverseString("red")).toBe("der");
@@ -38,4 +38,20 @@ test("Caesar Positive Low", () => {
 
 test("Caesar Negative Low", () => {
     expect(makeOffset("Raven", -5)).toBe("Mvqzi");
+});
+
+test("average", () => {
+    expect(analysis.average([3,7,9,2,2,4,1])).toBe(4);
+});
+
+test("Minimum", () => {
+    expect(analysis.min([2,3,7,7])).toBe(2);
+});
+
+test("Maximum", () => {
+    expect(analysis.max([3,1,9,18,12,3,15,8,9,7,6])).toBe(18);
+});
+
+test("Length", () => {
+    expect(analysis.length([3,4,5,6,31,2,3,5])).toBe(8);
 });

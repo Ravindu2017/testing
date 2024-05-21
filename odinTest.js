@@ -101,9 +101,48 @@ function makeOffset(rawName, offset) {
 // console.log(makeOffset("TRAINING", 85));
 // console.log(String.fromCharCode(78), str.charCodeAt(4));
 
+
+let analysis = {
+    average: (arr) => {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i];
+        }
+        return sum / arr.length;
+    },
+
+    min: (arr) => {
+        let min = arr[0];
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[j] < min) {
+                min = arr[j];
+            }
+        }
+        return min;
+    },
+
+    max: (arr) => {
+        let max = arr[0];
+        for (let k = 0; k < arr.length; k++) {
+            if (arr[k] > max) {
+                max = arr[k];
+            }
+        }
+        return max;
+    },
+
+    length: (arr) => {
+        return arr.length;
+    }
+}
+
+// arr = [3,4,1,8,9];
+// console.log(analysis.average([3,4,1,8,9]), analysis.min(arr), analysis.max(arr), analysis.length(arr));
+
 module.exports = {
     capitalize,
     reverseString,
     calculate,
     makeOffset,
+    analysis
 }
