@@ -4,11 +4,23 @@ function capitalize(name){
 
 function reverseString(name){
     let newName = "";
+    let finalName = "";
     for (let i = name.length-1; i >= 0; i--) {
-        newName += name[i];
+        newName += name[i].toLowerCase();
     }
-    return newName;
+
+    for (let k = 0; k < name.length; k++) {
+        if (name[k] === name[k].toUpperCase()) {
+            finalName += newName[k].toUpperCase();
+            // console.log(newName[k]);
+        } else {
+            finalName += newName[k];
+        }
+    }
+    return finalName;
 }
+
+// console.log(reverseString("Arthur"));
 
 let calculate = {
     add: function(x, y) {
@@ -31,9 +43,13 @@ let calculate = {
 
 let testName = "bart";
 // let str = "RAVEN";
-let str = "RaVeN";
+let str = "Raven";
 
-function makeOffset(name, offset) {
+function makeOffset(rawName, offset) {
+    let name = "";
+    for (let k = 0; k < rawName.length; k++) {
+        name += rawName[k].toUpperCase();
+    }
     let capitals = [];
     let cipher = "";
     for (let i = 0; i < name.length; i++) {
@@ -57,13 +73,22 @@ function makeOffset(name, offset) {
         cipher += String.fromCharCode(takeOff);
     }
     let ans = "";
-    for (let j = 0; j < name.length; j++) {
-        if (name[j] === name[j].toUpperCase()) {
+    // for (let j = 0; j < name.length; j++) {
+    //     if (name[j] === name[j].toUpperCase()) {
+    //         ans += cipher[j].toUpperCase();
+    //     } else {
+    //         ans += cipher[j].toLowerCase();
+    //     }
+    // }
+
+    for (let j = 0; j < rawName.length; j++) {
+        if (rawName[j] === rawName[j].toUpperCase()) {
             ans += cipher[j].toUpperCase();
         } else {
             ans += cipher[j].toLowerCase();
         }
     }
+    
 
     // console.log("Plain Text: ", name, "\nFinal Cipher: ", ans);
 
@@ -71,5 +96,14 @@ function makeOffset(name, offset) {
 }
 
 
-console.log(makeOffset(str, 100));
+// console.log(makeOffset(str, 85));
+// console.log(makeOffset("TrAiNIng", 85));
+// console.log(makeOffset("TRAINING", 85));
 // console.log(String.fromCharCode(78), str.charCodeAt(4));
+
+module.exports = {
+    capitalize,
+    reverseString,
+    calculate,
+    makeOffset,
+}
