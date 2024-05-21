@@ -154,8 +154,20 @@ function makeOffset(name, offset) {
             // takeOff = takeOff + offset;
         } else if (name.charCodeAt(i) + offset < 65) {
             // if offset is high negative like -100
-            takeOff = (name.charCodeAt(i) + offset) % 26;
-            takeOff = 90 - takeOff;
+            // takeOff = (name.charCodeAt(i) + offset) % 26;
+            // takeOff = 90 - takeOff;
+            // takeOff = name.charCodeAt(i) - 65;
+            takeOff = name.charCodeAt(i) - 64;
+            takeOff = offset + takeOff;
+            takeOff = takeOff % 26;
+            takeOff = takeOff + 90;
+            // takeOff = takeOff + 91;
+            // if (takeOff > 90) {
+            //     takeOff = 
+            // }
+            // console.log("takeOff", takeOff)
+            // takeOff = 90 - Math.abs(takeOff);
+            // console.log("takeOff", takeOff)
 
         } else {
             takeOff = name.charCodeAt(i) + offset;
@@ -174,4 +186,14 @@ console.log("guys");
 makeOffset(str, 75);
 console.log("forgiving");
 makeOffset(str, 2);
+console.log("million");
+makeOffset(str, -2);
+console.log("prrt")
+makeOffset(str, -4);
+console.log("baby");
+console.log("iceCream");
+makeOffset(str, -99);
+console.log("right now");
+makeOffset(str, -149);
+
 console.log(String.fromCharCode(78), str.charCodeAt(4));
