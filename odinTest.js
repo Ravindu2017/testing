@@ -65,13 +65,13 @@ function makeOffset(name, offset) {
         }
     }
 
-    console.log("Plain Text: ", name, "\nFinal Cipher: ", ans);
+    // console.log("Plain Text: ", name, "\nFinal Cipher: ", ans);
 
     return ans
 }
 
 
-makeOffset(str, 100);
+console.log(makeOffset(str, 100));
 makeOffset(str, -149);
 
 // console.log(String.fromCharCode(78), str.charCodeAt(4));
